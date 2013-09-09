@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>jquery/select2/select2.css</name><params/></action>
+            <action method="addJs">
+                <file>jquery/jquery-1.9.min.js</file>
+                <params><![CDATA[name="js_001_first"]]></params>
+            </action>
+            <action method="addJs">
+                <file>jquery/select2/select2.min.js</file>
+                <params><![CDATA[name="js_002_second"]]></params>
+            </action>
+        </reference>
+    </default>
+</layout>
