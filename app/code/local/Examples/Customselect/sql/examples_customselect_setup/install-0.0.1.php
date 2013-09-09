@@ -39,33 +39,12 @@ $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'test_attribute', a
     'input_renderer'             => 'examples_customselect/renderer_select'
 ));
 $attributeId = $installer->getAttributeId(Mage_Catalog_Model_Product::ENTITY, 'test_attribute');
-for ($i = 1; $i <= 50; $i++) {
+for ($i = 1; $i <= 50000; $i++) {
     $data[] = 'Opt' . $i;
 }
 $option = array (
     'attribute_id' => $attributeId,
     'values' => $data
-);
-$this->addAttributeOption($option);
-
-
-
-$installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'test', array(
-    'group'                      => 'General',
-    'type'                       => 'varchar',
-    'input'                      => 'select',
-    'label'                      => 'Test',
-    'global'                     =>
-    Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
-    'required'                   => true,
-));
-$attributeId = $installer->getAttributeId(Mage_Catalog_Model_Product::ENTITY, 'test');
-for ($i = 1; $i <= 50; $i++) {
-    $newdata[] = 'test' . $i;
-}
-$option = array (
-    'attribute_id' => $attributeId,
-    'values' => $newdata
 );
 $this->addAttributeOption($option);
 
