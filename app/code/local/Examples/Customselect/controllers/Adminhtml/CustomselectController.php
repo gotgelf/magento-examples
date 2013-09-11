@@ -18,17 +18,17 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    Buyerquest
- * @package     Buyerquest_Invoice
+ * @category    Examples
+ * @package     Examples_Customselect
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://www.magentocommerce.com/license/enterprise-edition
  */
 
 /**
- * Adminhtml Invoice controller
+ * Examples_Customselect Admin Controller
  *
- * @category   Buyerquest
- * @package    Buyerquest_Invoice
+ * @category   Examples
+ * @package    Examples_Customselect
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 
@@ -49,7 +49,7 @@ class Examples_Customselect_Adminhtml_CustomselectController extends Mage_Adminh
             loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
         $options = Mage::getModel('examples_customselect/select')->
             getAttributesLikeSearch($attribute->getId(), $search);
-        
+
         $this->getResponse()->setBody(Mage::helper('core')->
             jsonEncode($options));
     }

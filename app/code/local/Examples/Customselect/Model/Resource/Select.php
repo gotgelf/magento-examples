@@ -75,14 +75,13 @@ class Examples_Customselect_Model_Resource_Select extends Mage_Core_Model_Resour
 
     /**
      * @param $optionId
+     * @param $storeId
      * @return array
      */
-    public function loadDefaultOptionText($optionId)
+    public function loadDefaultOptionText($optionId, $storeId)
     {
-        $store = Mage::app()->getStore();
-
         $select = $this->_getReadAdapter()->select()->from(array('a' => $this->getTable('eav/attribute_option_value')))
-            ->where('a.store_id = ?', $store->getId())
+            ->where('a.store_id = ?', $storeId)
             ->where('a.option_id = ?', $optionId);
 
         $data = $this->_getReadAdapter()->fetchRow($select);

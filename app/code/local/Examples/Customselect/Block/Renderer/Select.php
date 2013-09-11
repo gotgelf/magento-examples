@@ -31,14 +31,14 @@
  * @package    Varien_Data
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-class Examples_Customselect_Block_Renderer_Select extends Varien_Data_Form_Element_Select
+class Examples_Customselect_Block_Renderer_Select extends Varien_Data_Form_Element_Abstract
 {
     /**
      * @return string
      */
     public function getElementHtml()
     {
-       $html = '
+        $html = '
        <p>
             <input type="hidden"
                 id = "test_attribute"
@@ -93,7 +93,8 @@ EOF;
      */
     public function getDefaultOptionText()
     {
-        $data = Mage::getModel('examples_customselect/select')->getOptionText($this->getValue());
+        $storeId = Mage::app()->getStore()->getId();
+        $data = Mage::getModel('examples_customselect/select')->getOptionText($this->getValue(), $storeId);
         return $data['value'];
     }
 }
