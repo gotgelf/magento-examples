@@ -31,7 +31,7 @@
  * @package    Varien_Data
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-class Examples_Customselect_Block_Renderer_Select extends Varien_Data_Form_Element_Abstract
+class Examples_Customselect_Block_Renderer_Select extends Varien_Data_Form_Element_Select
 {
     /**
      * @return string
@@ -42,7 +42,7 @@ class Examples_Customselect_Block_Renderer_Select extends Varien_Data_Form_Eleme
        <p>
             <input type="hidden"
                 id = "test_attribute"
-                name = "product[test_attribute]"
+                name = "product[test_select]"
                 value = ' . $this->getValue() .  '
                 data-placeholder="-- Please select --" style="width:300px"/>
         </p>';

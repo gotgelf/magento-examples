@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento Enterprise Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Enterprise Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/enterprise-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Examples
+ * @package     Examples_Customselect
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://www.magentocommerce.com/license/enterprise-edition
+ */
+-->
+<config>
+    <modules>
+        <Examples_Attributeset>
+            <version>0.0.1</version>
+        </Examples_Attributeset>
+    </modules>
+
+    <global>
+        <models>
+            <examples_attributeset>
+                <class>Examples_Attributeset_Model</class>
+            </examples_attributeset>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <examples_attributeset>
+                        <type>singleton</type>
+                        <class>examples_attributeset/observer</class>
+                        <method>addNewActionToProductGrid</method>
+                    </examples_attributeset>
+                </observers>
+            </adminhtml_block_html_before>
+        </events>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Examples_Attributeset before="Mage_Adminhtml">Examples_Attributeset_Adminhtml</Examples_Attributeset>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

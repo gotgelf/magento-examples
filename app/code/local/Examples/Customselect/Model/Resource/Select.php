@@ -85,7 +85,6 @@ class Examples_Customselect_Model_Resource_Select extends Mage_Core_Model_Resour
             ->where('a.option_id = ?', $optionId);
 
         $data = $this->_getReadAdapter()->fetchRow($select);
-
         return $data;
     }
 }

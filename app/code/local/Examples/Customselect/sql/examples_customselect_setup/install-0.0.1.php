@@ -35,6 +35,7 @@ $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'test_select', arra
     'label'                      => 'Test Select',
     'global'                     =>
     Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
+    'input_renderer'             => 'examples_customselect/renderer_select',
     'required'                   => true,
     'visible_on_front'           => true,
 ));
@@ -50,6 +51,8 @@ $option = array (
 );
 $this->addAttributeOption($option);
 
+$data = array();
+
 $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'frontend_select', array(
     'group'                      => 'General',
     'type'                       => 'varchar',
@@ -64,7 +67,7 @@ $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'frontend_select', 
 
 $attributeId = $installer->getAttributeId(Mage_Catalog_Model_Product::ENTITY, 'frontend_select');
 for ($i = 1; $i <= 10000; $i++) {
-    $data[] = 'Opt' . $i;
+    $data[] = 'Fr_Opt' . $i;
 }
 
 $option = array (

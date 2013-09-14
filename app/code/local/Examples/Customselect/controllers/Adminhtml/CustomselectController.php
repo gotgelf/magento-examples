@@ -49,7 +49,7 @@ class Examples_Customselect_Adminhtml_CustomselectController extends Mage_Adminh
             loadByCode(Mage_Catalog_Model_Product::ENTITY, $attributeCode);
         $options = Mage::getModel('examples_customselect/select')->
             getAttributesLikeSearch($attribute->getId(), $search);
-
+        Mage::log(print_r($options, true), null, 'data.log');
         $this->getResponse()->setBody(Mage::helper('core')->
             jsonEncode($options));
     }
